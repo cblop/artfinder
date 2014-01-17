@@ -2,9 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers']).
+angular.module('artBrowser', ['artBrowser.filters', 'angularTreeview', 'artBrowser.services', 'artBrowser.directives', 'artBrowser.controllers', 'ui.bootstrap']).
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-    $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-    $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.when('/timeline:artist', {templateUrl: 'partials/timeline.html', controller: 'TimelineCtrl'});
+    $routeProvider.when('/timeline', {templateUrl: 'partials/timeline.html', controller: 'TimelineCtrl'});
+    $routeProvider.when('/catlist', {templateUrl: 'partials/catlist.html', controller: 'CatListCtrl'});
+    $routeProvider.when('/flatlist', {templateUrl: 'partials/flatlist.html', controller: 'FlatListCtrl'});
+    //$routeProvider.when('/facets', {templateUrl: 'partials/tabs.html', controller: 'TabsCtrl'});
+    $routeProvider.otherwise({redirectTo: '/catlist'});
   }]);

@@ -1,5 +1,16 @@
 /* app css stylesheet */
 
+#tophead {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+.bread {
+  margin-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
