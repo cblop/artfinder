@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+<br/>
+  <div class="row-fluid">
+    <div class="span4">
+    <br/>
+    <hr/>
+  <div
+    data-angular-treeview="true"
+    data-tree-id="flat"
+    data-tree-model="flat_data"
+    data-node-id="node"
+    data-node-label="node"
+    data-node-children="children">
+    </div>
+  <hr />
+  </div>
+    <div class="span4">
+      <ul class="artists">
+<!--      	<li ng-repeat="artist in artists | filter:selectedNode.node" class = "b-thumbnail" ng-click="changeEvents('artists/' + artist.uri + '-timeline.json')"> -->
+        <p>Search: &nbsp&nbsp<input ng-model="searchText"></p>
+        <li ng-repeat="artist in artists | filter:artFilter | filter:searchText" class = "b-thumbnail" ng-click="open(artist)">
+      		{{artist.name}}
+      	</li>
+      </ul>
+    </div>
+    <div class ="span4">
+      <button class='btn btn-default' ng-click="resetAlerts()">Reset</button>
+      <hr/>
+      <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.message}}</alert>
+      <!--Body content-->
+    </div>
+  </div>
+  </div>
+</div>
